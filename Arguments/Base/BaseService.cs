@@ -22,18 +22,7 @@ public class BaseService<TRefit> : IBaseService
         }
         else
         {
-            object obj;
-            if (response == null)
-            {
-                obj = null;
-            }
-            else
-            {
-                ApiException error = response.Error;
-                obj = ((error != null) ? error.Content : null);
-            }
-
-            baseApiResponse.Error = JsonConvert.DeserializeObject<TTypeError>((string)obj);
+            baseApiResponse.Error = JsonConvert.DeserializeObject<TTypeError>(response?.Error?.Content);
         }
 
         return baseApiResponse;

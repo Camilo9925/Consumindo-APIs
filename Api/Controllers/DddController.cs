@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class DddController(IDddService service) : BaseController<IDddService>(service)
     {
         [ProducesResponseType<OutputDdd>(StatusCodes.Status200OK)]
