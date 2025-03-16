@@ -5,5 +5,5 @@ namespace Application.Services.Interfaces;
 
 public interface ICepService
 {
-    Task<BaseApiResponse<OutputZipCode, string>> GetByZipConde(string zipCode);
+    Task<BaseApiResponse<OutputZipCode, string>> GetByZipCode(string zipCode);
 }
