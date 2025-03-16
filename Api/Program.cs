@@ -1,6 +1,10 @@
 using ApiClient.Refit.Cep;
 using ApiClient.Refit.Cnpj;
 using ApiClient.Refit.DDD;
+using Application.Services.Cep;
+using Application.Services.Cnpj;
+using Application.Services.DDD;
+using Application.Services.Interfaces;
 using Refit;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +28,10 @@ builder.Services.AddRefitClient<IDddRefit>().ConfigureHttpClient(c =>
 {
     c.BaseAddress = new Uri("https://brasilapi.com.br");
 });
+
+builder.Services.AddScoped<ICepService, CepService>();
+builder.Services.AddScoped<ICnpjService, CnpjService>();
+builder.Services.AddScoped<IDddService, DddService>();
 
 var app = builder.Build();
 
