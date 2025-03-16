@@ -1,0 +1,28 @@
+# Compilação
+bin/
+obj/
+
+# Configurações do VS Code
+.vscode/
+
+# Dependências e pacotes
+*.nuget/
+packages/
+*.nupkg
+project.lock.json
+
+# Logs e arquivos temporários
+logs/
+*.log
+*.tmp
+*.bak
+
+# Configurações do usuário
+*.user
+*.suo
+*.swp
+*.cache
+
+# Configurações do sistema operacional
+Thumbs.db
+.DS_Store
